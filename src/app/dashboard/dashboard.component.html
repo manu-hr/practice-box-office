@@ -1,0 +1,42 @@
+<div class="container">
+    <h4>Trending Movies</h4>
+    <div class="row mb-4">
+        <div class="col-6">
+            <input type="text" [(ngModel)]="searchText" name="search" id="search" width="60%" placeholder="Search Movie">
+            <button (click) = "search()" type = button>Go</button>
+            <button (click) = "reset()" type = button>Reset</button>
+        </div>
+    </div>
+
+    <div class="row gx-2 gy-5">
+        <div class="col-5 col-md-3  offset-1 " *ngFor="let movie of movies">
+            <div class="card" >
+                <img class="card-img-top" src="../../assets/images/{{movie.movieTitle}}.jpg" alt="Card image cap">
+            </div>    
+            <div class="row">
+                <div class="col-1">
+                    <img src="../../assets/images/rating.jpg" alt="" width="20" height="20">
+                </div>
+                <div class="col">
+                    {{movie.rating}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    {{movie.movieTitle}}
+                </div>
+                <div class="col">
+                    {{movie.genre}}
+
+                </div>
+                <div class="col">
+                    {{movie.yearOfRelease}}
+
+                </div>
+            </div>
+            
+        </div>
+      
+    </div>
+
+</div>
